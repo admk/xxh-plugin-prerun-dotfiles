@@ -6,7 +6,7 @@ fi
 
 if [[ ! -f $done_file ]]; then
   CURR_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-  cd $CURR_DIR/home
+  cd $CURR_DIR/../plugins/dotfiles/
   for item in $(shopt -s dotglob && cd $CURR_DIR/home && find *); do
 
     item_basedir=`echo $item | cut -d "/" -f1`
@@ -34,4 +34,4 @@ if [[ ! -f $done_file ]]; then
   echo 'done' > $done_file
 fi
 cd $XXH_HOME
-source .zshrc
+source $XXH_HOME/.zshrc
